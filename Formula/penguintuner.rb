@@ -14,7 +14,7 @@ class penguintuner < Formula
   depends_on "gtk+3"
 
   def install
-    system "./configure"
+    system "./configure.sh"
     system "./build.sh", "install"
   end
 end
