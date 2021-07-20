@@ -1,4 +1,4 @@
-class PenguinTuner < Formula
+class Penguintuner < Formula
   desc "A GUI application to interact with CTRE CAN devices"
   homepage "https://penguintuner.tytan.rocks"
   head "https://github.com/TytanRock/PenguinTuner.git"
