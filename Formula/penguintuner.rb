@@ -5,7 +5,7 @@ class Penguintuner < Formula
   sha256 "dfa636173ad3a0f3ad1fe6c4aaa1b9c2a4fec926c24aee80fe407a9124a990e4"
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
-  
+
   depends_on "cmake"
   depends_on "curl"
   depends_on "gtk+3"
