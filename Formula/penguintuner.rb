@@ -6,14 +6,14 @@ class Penguintuner < Formula
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
 
-  depends_on "cmake"
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "cmake"
   depends_on "curl"
   depends_on "gtk+3"
   depends_on "libssh"
-  depends_on "pkg-config"
   depends_on "python3" => :build
+  depends_on "pkg-config"
 
   def install
     # Make the build directory
@@ -22,12 +22,12 @@ class Penguintuner < Formula
     # Determine if Mac or Linux
     operating_system = `uname -s`
     # Default arch to uknown
-    arch = 'unknown'
+    arch = "unknown"
     case operating_system
-    when 'Darwin'
+    when "Darwin"
       # If OS is Mac, set arch to macos
-      arch = 'macos'
-    when 'Linux'
+      arch = "macos"
+    when "Linux"
       # Otherwise, use dpkg to determine architecture
       arch = `dpkg --print-architecture`
     end
