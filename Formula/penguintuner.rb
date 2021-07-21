@@ -21,6 +21,8 @@ class Penguintuner < Formula
 
     # Determine if Mac or Linux
     operating_system = `uname -s`
+
+    puts operating_system
     # Default arch to uknown
     arch = "unknown"
     case operating_system
