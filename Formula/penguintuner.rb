@@ -36,7 +36,7 @@ class Penguintuner < Formula
     # Setup meson build
     system "meson", "-Darchitecture=#{arch}", "-Dprefix=#{prefix}", "build"
     cd "build" do
-      system "ninja", "install"
+      system "meson", "install"
     end
   end
 end
