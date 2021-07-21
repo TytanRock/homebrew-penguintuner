@@ -23,7 +23,7 @@ class Penguintuner < Formula
     operating_system = `uname -s`
 
     # Default arch to uknown
-    arch case operating_system
+    arch = case operating_system
     when "Darwin"
       # If OS is Mac, set arch to macos
       "macos"
