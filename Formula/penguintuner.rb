@@ -22,17 +22,16 @@ class Penguintuner < Formula
     # Determine if Mac or Linux
     operating_system = `uname -s`
 
-    puts operating_system
-    puts RUBY_PLATFORM
     # Default arch to uknown
-    arch = "unknown"
-    case operating_system
+    arch case operating_system
     when "Darwin"
       # If OS is Mac, set arch to macos
-      arch = "macos"
+      "macos"
     when "Linux"
       # Otherwise, use dpkg to determine architecture
-      arch = `dpkg --print-architecture`
+      `dpkg --print-architecture`
+    else
+      "unknown"
     end
     # Setup meson build
     system "meson", "-Darchitecture=#{arch}", "build"
