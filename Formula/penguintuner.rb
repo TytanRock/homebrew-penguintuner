@@ -16,25 +16,24 @@ class Penguintuner < Formula
   depends_on "pkg-config"
 
   def install
-    # Make the build directory
-    mkdir "build"
-
     # Determine if Mac or Linux
-    operating_system = `uname -s`
-
-    # Default arch to uknown
-    arch = case operating_system
+    arch = case `uname -s`
     when /Darwin$/
       # If OS is Mac, set arch to macos
       "macos"
     when /Linux$/
-      # Otherwise, use dpkg to determine architecture
+      # If Linux, use dpkg to determine architecture
       `dpkg --print-architecture`
     else
-      "unknown"
+      # Otherwise we don't know
+      odie "Couldn't determine architecture"
     end
+    ohai "Architecture is #{arch}"
+
+    # Make the build directory
+    mkdir "build"
     # Setup meson build
-    system "meson", "-Darchitecture=#{arch} build"
+    system "meson", "-Darchitecture=#{arch}", "build"
     cd "build" do
       system "ninja", "install"
     end
