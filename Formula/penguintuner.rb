@@ -23,6 +23,7 @@ class Penguintuner < Formula
     operating_system = `uname -s`
 
     puts operating_system
+    puts RUBY_PLATFORM
     # Default arch to uknown
     arch = "unknown"
     case operating_system
