@@ -21,7 +21,6 @@ class Penguintuner < Formula
 
     # Determine if Mac or Linux
     operating_system = `uname -s`
-    puts operating_system
 
     # Default arch to uknown
     arch = case operating_system
@@ -35,7 +34,7 @@ class Penguintuner < Formula
       "unknown"
     end
     # Setup meson build
-    system "meson", "-Darchitecture=#{arch}", "build"
+    system "meson", "-Darchitecture=#{arch} build"
     cd "build" do
       system "ninja", "install"
     end
