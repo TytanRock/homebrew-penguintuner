@@ -17,7 +17,8 @@ class Penguintuner < Formula
 
   def install
     # Determine if Mac or Linux
-    arch = case `uname -s`
+    os = `uname -s`
+    arch = case os
     when /Darwin$/
       # If OS is Mac, set arch to macos
       "macos"
