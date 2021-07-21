@@ -21,13 +21,14 @@ class Penguintuner < Formula
 
     # Determine if Mac or Linux
     operating_system = `uname -s`
+    puts operating_system
 
     # Default arch to uknown
     arch = case operating_system
-    when "Darwin"
+    when /Darwin$/
       # If OS is Mac, set arch to macos
       "macos"
-    when "Linux"
+    when /Linux$/
       # Otherwise, use dpkg to determine architecture
       `dpkg --print-architecture`
     else
