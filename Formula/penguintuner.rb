@@ -8,16 +8,16 @@ class Penguintuner < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "python3" => :build
   depends_on "cmake"
   depends_on "curl"
   depends_on "gtk+3"
   depends_on "libssh"
-  depends_on "python3" => :build
   depends_on "pkg-config"
 
   def install
     # Make the build directory
-    system "mkdir", "build"
+    mkdir "build"
 
     # Determine if Mac or Linux
     operating_system = `uname -s`
@@ -33,7 +33,7 @@ class Penguintuner < Formula
     end
     # Setup meson build
     system "meson", "-Darchitecture=#{arch}", "build"
-    cd 'build' do
+    cd "build" do
       system "ninja", "install"
     end
   end
