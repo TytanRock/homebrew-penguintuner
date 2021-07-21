@@ -24,7 +24,7 @@ class Penguintuner < Formula
       "macos"
     when /Linux$/
       # If Linux, use dpkg to determine architecture
-      `dpkg --print-architecture`
+      `dpkg --print-architecture`.strip
     else
       # Otherwise we don't know
       odie "Couldn't determine architecture"
