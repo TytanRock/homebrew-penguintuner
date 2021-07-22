@@ -6,14 +6,15 @@ class Penguintuner < Formula
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
 
-  depends_on "meson" => [:build, "0.53.2"]
-  depends_on "ninja" => [:build, "1.10.0"]
+  depends_on "gcc@10" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "python3" => :build
   depends_on "cmake"
-  depends_on "curl" => "7.68.0"
-  depends_on "gtk+3" => "3.24.20"
-  depends_on "libssh" => "0.9.3"
-  depends_on "pkg-config" => "0.29.1"
+  depends_on "curl"
+  depends_on "gtk+3"
+  depends_on "libssh"
+  depends_on "pkg-config"
 
   def install
     # Determine if Mac or Linux
