@@ -6,7 +6,7 @@ class Penguintuner < Formula
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
 
-  depends_on "gcc@10" => :build
+  depends_on "gcc@9" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "python3" => :build
