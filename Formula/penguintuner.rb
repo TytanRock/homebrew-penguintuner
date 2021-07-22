@@ -6,7 +6,6 @@ class Penguintuner < Formula
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
 
-  depends_on "gcc@9" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "python3" => :build
@@ -32,8 +31,8 @@ class Penguintuner < Formula
     end
     ohai "Architecture is #{arch}"
 
-    ENV["HOMEBREW_CC"] = "gcc-9"
-    ENV["CC"] = "gcc-9"
+    ENV["HOMEBREW_CC"] = "clang"
+    ENV["CC"] = "clang"
 
     # Make the build directory
     mkdir "build"
