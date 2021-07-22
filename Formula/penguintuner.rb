@@ -33,6 +33,7 @@ class Penguintuner < Formula
     ohai "Architecture is #{arch}"
 
     ENV["HOMEBREW_CC"] = "gcc-9"
+    ENV["CC"] = "gcc-9"
 
     # Make the build directory
     mkdir "build"
