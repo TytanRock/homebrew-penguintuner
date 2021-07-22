@@ -1,8 +1,8 @@
 class Penguintuner < Formula
   desc "GUI application to interact with CTRE CAN devices"
   homepage "https://penguintuner.tytan.rocks"
-  url "https://github.com/TytanRock/PenguinTuner/archive/refs/tags/v0.4.4.tar.gz"
-  sha256 "2b2d9212c358bb40945d6911d3f079cbea04a4f267e191d379b42c6086386d9e"
+  url "https://github.com/TytanRock/PenguinTuner/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "dfa636173ad3a0f3ad1fe6c4aaa1b9c2a4fec926c24aee80fe407a9124a990e4"
   license "BSD-3-Clause"
   head "https://github.com/TytanRock/PenguinTuner.git"
 
