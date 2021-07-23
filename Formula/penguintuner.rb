@@ -37,7 +37,7 @@ class Penguintuner < Formula
     # Make the build directory
     mkdir "build"
     # Setup meson build
-    system "meson", "-Darchitecture=#{arch}", "-Dprefix=#{prefix}", "build"
+    system "meson", "-Darchitecture=#{arch}", "build"
     cd "build" do
       system "ninja", "install"
     end
